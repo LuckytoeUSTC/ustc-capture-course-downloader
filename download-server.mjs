@@ -103,7 +103,7 @@ export async function startDownloadService() {
       const pathname=new URL(req.url,`http://127.0.0.1:${PORT}`).pathname;
       if(req.method==='GET'&&pathname==='/health')return send(200,{ok:true,version:'0.4.0'});
       if(req.method==='GET'&&pathname==='/jobs')return send(200,{tasks:tasks.filter(t=>t.status!=='cancelled').map(t=>({id:taskId(t),name:t.name,status:t.status,bytes:progress.get(t.name)?.bytes||0,total:progress.get(t.name)?.total||t.size||0}))});
-      if(req.method!=='POST'||!['/jobs','/jobs/cancel','/jobs/control'].includes(pathname))return send(404,{error:'请通过录课网站中的油猴面板提交任务。'});
+      if(req.method!=='POST'||!['/jobs','/jobs/cancel','/jobs/control'].includes(pathname))return send(404,{error:'请通过在线视频平台中的油猴面板提交任务。'});
       if(req.headers['x-course-helper']!=='ustc-download'||!(req.headers['content-type']||'').startsWith('application/json'))return send(403,{error:'请求格式不允许。'});
       if(pathname==='/jobs/cancel'){
         const cancelled=cancelPending();

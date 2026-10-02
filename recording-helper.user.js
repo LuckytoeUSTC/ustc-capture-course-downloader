@@ -29,7 +29,7 @@
     const r = await fetch(route, {credentials:'same-origin',headers:{Accept:'application/json'},signal:AbortSignal.timeout(30000)});
     if([401,403].includes(r.status)) throw new Error('请正常登录并确认课程访问权限。');
     if(!r.ok) throw new Error(`平台请求失败：HTTP ${r.status}`);
-    if(!(r.headers.get('content-type')||'').includes('json')) throw new Error('请重新登录录课网站。');
+    if(!(r.headers.get('content-type')||'').includes('json')) throw new Error('请重新登录在线视频平台。');
     const body=await r.json();
     if(body.error?.code && body.error.code!=='0') throw new Error('平台未返回可访问的数据。');
     if(!Object.hasOwn(body,'data')) throw new Error('平台接口格式发生变化。');
@@ -150,7 +150,7 @@
   function idFrom(value) {
     if (/^\d+$/.test(value.trim())) return value.trim();
     const url = new URL(value);
-    if (url.origin !== 'https://v.ustc.edu.cn') throw new Error('请输入课程编号或录课网站的“我的课程”网址。');
+    if (url.origin !== 'https://v.ustc.edu.cn') throw new Error('请输入课程编号或在线视频平台的“我的课程”网址。');
     const id = url.pathname.match(/^\/my-capture-courses\/(\d+)(?:\/|$)/)?.[1];
     if (!id) throw new Error('请输入课程内部编号，如 18370。');
     return id;
