@@ -53,7 +53,7 @@
 
 本项目由维护者提出需求并参与使用反馈，OpenAI Codex 协助编写和重构代码、调整界面及整理文档。
 
-参考了 [TMYTiMidlY/capture-courses](https://github.com/TMYTiMidlY/capture-courses) 的录课访问思路、旧接口分析和 Issues 讨论；下方声明也参考了其 README。本项目的油猴界面、本地下载服务和任务管理代码另行编写，未沿用原项目的浏览器本地覆写文件。原项目的贡献不代表其作者参与或认可本项目。
+开发过程中主要参考了 [TMYTiMidlY/capture-courses](https://github.com/TMYTiMidlY/capture-courses) 开发者对录课网站接口、平台更新及鉴权机制的分析，尤其是 Issues 中的技术讨论。下方使用声明参考了该项目的 README。本工具的油猴界面、本地下载服务和任务管理代码另行编写。
 
 ## 特别声明
 
