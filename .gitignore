@@ -1,0 +1,7 @@
+downloads/
+参考资料/
+*.har
+*.part
+*.html
+*_files/
+.download-state/
